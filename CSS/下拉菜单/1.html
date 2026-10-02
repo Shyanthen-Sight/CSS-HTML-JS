@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <style>
+        body {
+            background-color: #f5f7fa;
+        }
+
+        /* 清除浏览器默认边距，让header能贴到最顶部 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            height: 30px;
+            background: lightgray;
+            /* 关键：固定定位，让header始终贴在最顶部 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            /* 整体水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+            display: flex;
+            /*横向排多个菜单*/
+        }
+
+        footer {
+            width: 100%;
+            height: 30px;
+            background: lightgray;
+            position: fixed;
+            text-align: center;
+            bottom: 0;
+        }
+
+        /*中心内容*/
+        .main {
+            margin: 50px 30px 50px 30px;
+            /*顺序固定：上 → 右 → 下 → 左（顺时针）*/
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.08);
+            line-height: 2;
+            height: 300px;
+            overflow: auto;
+        }
+
+
+        /* 导航选项 */
+        .dropdown {
+            width: 120px;
+            background: #222;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            height: 30px;
+            position: relative;
+            /* 作为下拉菜单的定位父元素 */
+            border: 1px solid #666;
+            transition: background 0.3s ease;
+            /*鼠标停留导航栏时缓慢变色*/
+        }
+
+        /*停留导航栏时变色*/
+        .dropdown:hover {
+            background: #444;
+        }
+
+        /*导航的下拉栏出现时停留*/
+        .dropdown:hover .sub {
+            display: block;
+        }
+
+        /* 下拉菜单 */
+        .sub {
+            display: none;
+            background: #eee;
+            position: absolute;
+            /* 让下拉菜单脱离文档流，盖在header下方 */
+            top: 30px;
+            /* 正好在父菜单高度的下方 */
+            width: 120px;
+            border-radius: 0 0 8px 8px;
+            /*四个值顺序：左上 → 右上 → 右下 → 左下*/
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+            /* 下拉阴影 */
+        }
+
+        /* 下拉选项 */
+        .sub a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px 0;
+            /* 给选项加内边距，避免文字太挤 */
+        }
+
+
+
+        /*导航下拉栏变色*/
+        .sub a:hover {
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="dropdown">
+            首页
+            <div class="sub">
+                <a href="#">网站首页</a>
+                <a href="#">热门推荐</a>
+                <a href="#">最新动态</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            个人中心
+            <div class="sub">
+                <a href="#">我的资料</a>
+                <a href="#">我的收藏</a>
+                <a href="#">历史记录</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            设置
+            <div class="sub">
+                <a href="#">主题</a>
+                <a href="#">隐私权限设置</a>
+                <a href="#">消息通知开关</a>
+                <a href="#">意见反馈</a>
+                <a href="#">登陆设备管理</a>
+                <a href="#">关于我们</a>
+                <a href="#">退出登录</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            更多功能
+            <div class="sub">
+                <a href="#">账号安全</a>
+                <a href="#">修改密码</a>
+                <a href="#">语言切换</a>
+                <a href="#">帮助中心</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            学习园地
+            <div class="sub">
+                <a href="#">课程资料</a>
+                <a href="#">作业提交</a>
+                <a href="#">成绩查询</a>
+                <a href="#">考试安排</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            服务大厅
+            <div class="sub">
+                <a href="#">报修服务</a>
+                <a href="#">网络办理</a>
+                <a href="#">食堂评价</a>
+                <a href="#">校园导航</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            校园生活
+            <div class="sub">
+                <a href="#">宿舍服务</a>
+                <a href="#">食堂点餐</a>
+                <a href="#">校园骑行</a>
+                <a href="#">快递代收</a>
+                <a href="#">校园兼职</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            社团组织
+            <div class="sub">
+                <a href="#">社团列表</a>
+                <a href="#">社团招新</a>
+                <a href="#">活动报名</a>
+                <a href="#">干部申请</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            资源下载
+            <div class="sub">
+                <a href="#">课件资料</a>
+                <a href="#">复习题库</a>
+                <a href="#">软件安装包</a>
+                <a href="#">模板文档</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            消息中心
+            <div class="sub">
+                <a href="#">系统通知</a>
+                <a href="#">班级消息</a>
+                <a href="#">私信聊天</a>
+                <a href="#">待办提醒</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            娱乐休闲
+            <div class="sub">
+                <a href="#">热门音乐</a>
+                <a href="#">影视推荐</a>
+                <a href="#">趣味小游戏</a>
+                <a href="#">心情树洞</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main">
+            Bridge makes integration of region tangible
+            By ZHAO JIA | chinadaily.com.cn | Updated: 2026-05-09 05:01
+            Before the Hong Kong-Zhuhai-Macao Bridge opened, a trip from Zhuhai to Hong Kong meant either taking the
+            ferry for more than an hour or driving around the waters separating the two cities for three to four hours.
+            That journey can now be made in about 45 minutes across the Lingdingyang Bay
+
+            For Wang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest cross-sea bridge,
+            which is often described as "the project of the century", is less of an engineering marvel and more of what
+            she calls "a link woven into everyday life".
+
+            Fresh produce from western parts of Guangdong province can now reach supermarkets in Hong Kong within half a
+            day, while residents of Hong Kong and Macao special administrative regions can drive to Zhuhai in Guangdong
+            to buy flowers for Spring Festival, to visit relatives, or to simply spend a day in the mainland city and
+            see how it has changed.
+
+            Wang recalled what one of her friends from Hong Kong told her: "Going to Zhuhai used to feel like a business
+            trip. Now it feels like just going out."
+
+            The bridge has changed a lot more than just reducing travel time. It has linked logistics, customs clearance
+            and consumption more closely with everyday needs, making the integration of the Guangdong-Hong Kong-Macao
+            Greater Bay Area seem less like a planning term and more like a daily reality for residents and businesses.
+
+            Covering nine cities in Guangdong, as well
+            ang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest cross-sea bridge, which
+            is often described as "the project of the century", is less of an engineering marvel and more of what she
+            calls "a link woven into everyday life".
+
+            Fresh produce from western parts of Guangdong province can now reach supermarkets in Hong Kong within half a
+            day, while residents of Hong Kong and Macao special administrative regions can drive to Zhuhai in Guangdong
+            to buy flowers for Spring Festival, to visit relatives, or to simply spend a day in the mainland city and
+            see how it has changed.
+
+            Wang recalled what one of her friends from Hong Kong told her: "Going to Zhuhai used to feel like a business
+            trip. Now it feels like just going out."
+
+            The bridge has changed a lot more than just reducing travel time. It has linked logistics, customs clearance
+            and consumption mor
+    </main>
+    <main>
+        <div class="main">
+            Bridge makes integration of region tangible
+            By ZHAO JIA | chinadaily.com.cn | Updated: 2026-05-09 05:01
+            Before the Hong Kong-Zhuhai-Macao Bridge opened, a trip from Zhuhai to Hong Kong meant either taking the
+            ferry for more than an hour or driving around the waters separating the two cities for three to four hours.
+            That journey can now be made in about 45 minutes across the Lingdingyang Bay
+
+            For Wang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest cross-sea bridge,
+            which is often described as "the project of the century", is less of an engineering marvel and more of what
+            she calls "a link woven into everyday life".
+
+            Fresh produce from western par
+    </main>
+    <main>
+        <div class="main">
+            Bridge makes integration of region tangible
+            By ZHAO JIA | chinadaily.com.cn | Updated: 2026-05-09 05:01
+            Before the Hong Kong-Zhuhai-Macao Bridge opened, a trip from Zhuhai to Hong Kong meant either taking the
+            ferry for more than an hour or driving around the waters separating the two cities for three to four hours.
+            That journey can now be made in about 45 minutes across the Lingdingyang Bay
+
+            For Wang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest cross-sea bridge,
+            which is often described as "the project of the century", is less of an engineering marvel and more of what
+            she calls "a link woven into everyday life".
+
+            Fresh produce from western parts of Guangdong province can now reach supermarkets in Hong Kong within half a
+            day, while residents of Hong Kong and Macao special administrative regions can drive to Zhuhai in Guangdong
+            to buy flowers for Spring Festival, to visit relatives, or to simply spend a day in the mainland city and
+            see how it has changed.
+
+            Wang recalled what one of her frtics, customs clearance and consumption more closely with everyday needs,
+            making the integration of the Guangdong-Hong Kong-Macao Greater Bay Area seem less like a planning term and
+            more like a daily reality for residents and businesses.
+
+            Covering nine cities in Guangdong, as well
+    </main>
+    <main>
+        <div class="main">
+            Bridge makes integration of region tangible
+            By ZHAO JIA | chinadaily.com.cn | Updated: 2026-05-09 05:01
+            Before the Hong Kong-Zhuhai-Macao Bridge opened, a trip from Zhuhai to Hong Kong meant either taking the
+            ferry for more than an hour or driving around the waters separating the two cities for three to four hours.
+            That journey can now be made in about 45 minutes across the Lingdingyang Bay
+
+            For Wang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest cross-sea bridge,
+            which is often described as "the project of the century", is less of an engineering marvel and more of what
+            she calls "a link woven into everyday life".
+            as linked logistics, customs clearance and consumption more closely with everyday needs, making the
+            integration of the Guangdong-Hong Kong-Macao Greater Bay Area seem less like a planning term and more like a
+            daily reality for residents and businesses.
+            ang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest cross-sea bridge, which
+            is often described as "the project of the century", is less of an engineering marvel and more of what she
+            calls "a link woven into everyday life".
+
+            Fresh produce from western parts of Guangdong province can now reach supermarkets in Hong Kong within half a
+            day, while residents of Hong Kong and Macao special administrative regions can drive to Zhuhai in Guangdong
+            to buy flowers for Spring Festival, to visit relatives, or to simply spend a day in the mainland city and
+            see how it has changed.
+
+            Wang recalled what one of her friends from Hong Kong told her: "Going to Zhuhai used to feel like a business
+            trip. Now it feels like just going out."
+
+            The bridge has changed a lot more than just reducing travel time. It has linked logistics, customs clearance
+            and consumption morang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest
+            cross-sea bridge, which is often described as "the project of the century", is less of an engineering marvel
+            and more of what she calls "a link woven into everyday life".
+
+            Fresh produce from western parts of Guangdong province can now reach supermarkets in Hong Kong within half a
+            day, while residents of Hong Kong and Macao special administrative regions can drive to Zhuhai in Guangdong
+            to buy flowers for Spring Festival, to visit relatives, or to simply spend a day in the mainland city and
+            see how it has changed.
+
+            Wang recalled what one of her friends from Hong Kong told her: "Going to Zhuhai used to feel like a business
+            trip. Now it feels like just going out."
+
+            The bridge has changed a lot more than just reducing travel time. It has linked logistics, customs clearance
+            and consumption mor
+            Covering nine cities in Guangdong, as well
+    </main>
+    <main>
+        <div class="main">
+            Bridge makes integration of region tangible
+            By ZHAO JIA | chinadaily.com.cn | Updated: 2026-05-09 05:01
+            Before the Hong Kong-Zhuhai-Macao Bridge opened, a trip from Zhuhai to Hong Kong meant either taking the
+            ferry for more than an hour or driving around the waters separating the two cities for three to four hours.
+            That journey can now be made in about 45 minutes across the Lingdingyang Bay
+
+            For Wang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest cross-sea bridge,
+            which is often described as "the project of the century", is less of an engineering marvel and more of what
+            she calls "a link woven into everyday life".
+            as linked logistics, customs clearance and consumption more closely with everyday needs, making the
+            integration of the Guangdong-Hong Kong-Macao Greater Bay Area seem less like a planning term and more like a
+            daily reality for residents and businesses.
+            ang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest cross-sea bridge, which
+            is often described as "the project of the century", is less of an engineering marvel and more of what she
+            calls "a link woven into everyday life".
+
+            Fresh produce from western parts of Guangdong province can now reach supermarkets in Hong Kong within half a
+            day, while residents of Hong Kong and Macao special administrative regions can drive to Zhuhai in Guangdong
+            to buy flowers for Spring Festival, to visit relatives, or to simply spend a day in the mainland city and
+            see how it has changed.
+
+            Wang recalled what one of her friends from Hong Kong told her: "Going to Zhuhai used to feel like a business
+            trip. Now it feels like just going out."
+
+            The bridge has changed a lot more than just reducing travel time. It has linked logistics, customs clearance
+            and consumption morang Jie, director of the Zhuhai Municipal Trade Service Center, the world's longest
+            cross-sea bridge, which is often described as "the project of the century", is less of an engineering marvel
+            and more of what she calls "a link woven into everyday life".
+
+            Fresh produce from western parts of Guangdong province can now reach supermarkets in Hong Kong within half a
+            day, while residents of Hong Kong and Macao special administrative regions can drive to Zhuhai in Guangdong
+            to buy flowers for Spring Festival, to visit relatives, or to simply spend a day in the mainland city and
+            see how it has changed.
+
+            Wang recalled what one of her friends from Hong Kong told her: "Going to Zhuhai used to feel like a business
+            trip. Now it feels like just going out."
+
+            The bridge has changed a lot more than just reducing travel time. It has linked logistics, customs clearance
+            and consumption mor
+            Covering nine cities in Guangdong, as well
+    </main>
+
+    <footer>@-SHYANTHEN-</footer>
+</body>
+
+</html>

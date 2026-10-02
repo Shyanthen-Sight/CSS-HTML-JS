@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background:url(../../img/grand.webp) cover no-repeat top center;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function getRandom(N, M) {
+  return Math.floor(Math.random() * (M - N + 1)) + N//生成 [N, M] 闭区间的随机整数
+}
+const random=getRandom(1,3)
+document.body.style.backgroundImage=`url(../../img/${random}.jpg)`
+  </script>
+</body>
+</html>

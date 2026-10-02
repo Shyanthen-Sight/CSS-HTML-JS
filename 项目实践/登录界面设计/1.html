@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- 解决中文乱码问题 -->
+    <meta charset="UTF-8">
+    <!-- 移动端适配 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面设计</title>
+    <!-- 引用另起的css -->
+    <link rel="stylesheet" href="1.css">
+    <!-- 引用谷歌字体 -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <!-- 引用用户密码图标来源 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+
+<body>
+    <!-- 底部波浪图片 -->
+    <img src="img/wave.png" class="wave1">
+
+    <!-- 最大容器：负责左右分栏布局 -->
+    <div class="container">
+        <!-- 左侧：图片区域 -->
+        <div class="img">
+            <img src="img/bg.svg" alt="">
+        </div>
+        <!-- 右侧：登录表单区域 -->
+        <div class="login-content">
+
+            <form action="index.html"> <!-- 表单：提交到 index.html -->
+                
+                <!-- 头像 -->
+                <img src="img/avatar.svg">
+
+                <h2 class="title">欢迎</h2>
+
+                <!-- 用户名输入框 -->
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        <h5>用户名</h5>
+                        <input type="text" class="input">
+                    </div>
+                </div>
+
+                <!-- 密码输入框 -->
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5>密码</h5>
+                        <input type="password" class="input">
+                    </div>
+                </div>
+                <a href="#" class="a">忘记密码？</a>
+                <input type="submit" class="btn" value="登录">
+
+            </form>
+
+        </div>
+    </div>
+    <script src="1.js"></script>
+</body>
+
+</html>

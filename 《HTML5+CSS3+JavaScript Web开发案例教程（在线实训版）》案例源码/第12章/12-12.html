@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>计算倒计时</title>
+<script>
+function disDate(oDate, iDate){
+    let ms = oDate.getTime();        //换成毫秒数
+    ms -= iDate*24*60*60*1000;       //计算相差的毫秒数
+    return new Date(ms);             //返回新的时间对象
+}
+let oBeijing = new Date(2021,0,1);
+let iNum = 100;                        //前100天
+let oMyDate = disDate(oBeijing, iNum);
+console.log(oMyDate.getFullYear()+"年"
+	+(oMyDate.getMonth()+1)+"月"
+	+oMyDate.getDate()+"日"
++"距离"+oBeijing.getFullYear()+"年"
+	+(oBeijing.getMonth()+1)+"月"
+	+oBeijing.getDate()+"日为"
++iNum+"天");
+</script>
+
+</head>
+<body>
+</body>
+</html>

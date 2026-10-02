@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>创建新节点的优化</title>
+<script>
+function insertColor(){
+	let aColors = 
+       ["red","green","blue","magenta","yellow","chocolate"];
+	let oFragment = document.createDocumentFragment();	//创建文档片段
+	for(let item of aColors){
+		let oP = document.createElement("p");
+		let oText = document.createTextNode(item);
+		oP.appendChild(oText);
+		oFragment.appendChild(oP);		//将节点先添加到片段中
+	}
+	document.body.appendChild(oFragment);	//最后一次性添加到页面
+}
+</script>
+</head>
+<body onload="insertColor()">
+</body>
+</html>

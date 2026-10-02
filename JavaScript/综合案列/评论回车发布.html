@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #tx {
+      width: 200px;
+    }
+
+    #tx:focus {
+      width: 200px;
+      height: 80px;
+    }
+
+    .total {
+      opacity: 0;
+      transition: all 0.5s;
+      color: black;
+    }
+
+    .statement {
+      border: 1px solid #333;
+      height: 40px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea name="" id="tx" placeholder="请输入一个评论"></textarea>
+  <span class="total">0/10字</span>
+  <div class="statement">
+    <p class="text"></p>
+  </div>
+  <script>
+    const tx = document.querySelector('#tx')
+    const total = document.querySelector('.total')
+    const statement = document.querySelector('.statement')
+    const text = document.querySelector('.text')
+    tx.addEventListener('focus', function () {
+      total.style.opacity = 1
+    })
+    tx.addEventListener('blur', function () {
+      total.style.opacity = 0
+    })
+
+    tx.addEventListener('input', function () {
+      // 字数超限判断
+      if (tx.value.length >= 10) {
+        total.style.color = 'red'
+        total.innerHTML = '超出字数限制'
+        tx.value = tx.value.slice(0, 10)
+      }
+      else {
+        total.innerHTML = `${tx.value.length}/10字`
+        total.style.color = 'black'
+      }
+    })
+    // 发布评论
+    tx.addEventListener('keyup', function (e) {
+
+      if (e.key === 'Enter') {
+        // 如果输入不是空字符
+        if (tx.value.trim() !== '') {
+          statement.style.display = 'block'
+          text.innerHTML = tx.value
+          // 回车后清空文本域
+          tx.value = ''
+          total.innerHTML='0/10字'
+        }
+        
+      }
+
+    })
+  </script>
+</body>
+
+</html>

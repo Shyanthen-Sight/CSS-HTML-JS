@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    //获取元素
+    const box=document.querySelector('.box')
+    //修改样式属性,小驼峰命名法
+    box.style.width='300px'
+    box.style.backgroundColor='red'
+    box.style.border='5px solid black'
+  </script>
+</body>
+</html>

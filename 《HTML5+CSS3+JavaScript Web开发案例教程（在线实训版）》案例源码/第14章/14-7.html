@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getAttribute()</title>
+<script>
+function myDOMInspector(){
+    //获取图片
+    let myImg = document.getElementsByTagName("img")[0];
+    //获取图片title属性
+    console.log(myImg.getAttribute("title"));
+}
+</script>
+</head>
+<body onload="myDOMInspector()">
+    <img src="01.jpg" title="一幅图片" />
+</body>
+</html>

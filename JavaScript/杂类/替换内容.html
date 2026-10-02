@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo">this is an substitutable context </p>
+</body>
+<script>
+    function replace() {
+        x = document.getElementById("demo");//找到元素
+        x.innerHTML = "hello this is what replaced";//替换元素
+    }
+</script>
+<button onclick="replace()">plz click</button>
+</html>

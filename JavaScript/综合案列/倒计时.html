@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>倒计时</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0f0f1a;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 20px;
+    }
+
+    .countdown__box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .countdown__num {
+      width: 90px;
+      height: 100px;
+      background: linear-gradient(145deg, #1a1a2e, #16213e);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #00d4ff;
+      box-shadow: 0 4px 20px rgba(0, 212, 255, 0.15);
+    }
+
+    .countdown__label {
+      font-size: 0.8rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .countdown__sep {
+      font-size: 2.6rem;
+      color: #00d4ff;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <div class="countdown__box">
+      <div class="countdown__num" id="days">00</div>
+      <span class="countdown__label">天</span>
+    </div>
+    <span class="countdown__sep">:</span>
+    <div class="countdown__box">
+      <div class="countdown__num" id="hours">00</div>
+      <span class="countdown__label">时</span>
+    </div>
+    <span class="countdown__sep">:</span>
+    <div class="countdown__box">
+      <div class="countdown__num" id="minutes">00</div>
+      <span class="countdown__label">分</span>
+    </div>
+    <span class="countdown__sep">:</span>
+    <div class="countdown__box">
+      <div class="countdown__num" id="seconds">00</div>
+      <span class="countdown__label">秒</span>
+    </div>
+  </div>
+  <script>
+    // ========== 倒计时函数 ==========
+    function time() {
+      // -------- 1. 获取当前时间与目标时间，计算时间差（秒） --------
+      const now = +new Date();                                          // 当前时间戳（毫秒）
+      const targetDate = new Date('2026-07-29T00:00:00');               // 目标日期（次日零点）
+      const count = (targetDate - now) / 1000;                          // 剩余秒数
+
+      // -------- 2. 倒计时结束处理：全部显示 00 --------
+      if (count <= 0) {
+        document.getElementById('days').innerHTML = '00';
+        document.getElementById('hours').innerHTML = '00';
+        document.getElementById('minutes').innerHTML = '00';
+        document.getElementById('seconds').innerHTML = '00';
+        return;
+      }
+
+      // -------- 3. 各时间单位计算（向下取整 + 补零） --------
+      let days = Math.floor(count / (60 * 60 * 24));                    // 总天数
+      days = days < 10 ? '0' + days : days;                            // 个位数补零
+      let hours = Math.floor((count % (60 * 60 * 24)) / (60 * 60));    // 剩余小时数
+      hours = hours < 10 ? '0' + hours : hours;
+      let minutes = Math.floor((count % (60 * 60)) / 60);              // 剩余分钟数
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      let seconds = Math.floor(count % 60);                             // 剩余秒数
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      // -------- 4. 将计算结果更新到页面 DOM --------
+      document.getElementById('days').innerHTML = days;
+      document.getElementById('hours').innerHTML = hours;
+      document.getElementById('minutes').innerHTML = minutes;
+      document.getElementById('seconds').innerHTML = seconds
+    }
+
+    // ========== 启动倒计时 ==========
+    time();                                 // 立即执行一次，避免首屏空白
+    setInterval(time, 1000);               // 每秒更新一次
+
+  </script>
+</body>
+
+</html>

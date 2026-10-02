@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>删除节点</title>
+<script>
+function deleteP(){
+	let oP = document.getElementsByTagName("p")[0];
+	oP.parentNode.removeChild(oP);		//删除节点
+}
+</script>
+</head>
+<body>
+<p onclick="deleteP()">点击一下，这行文字就看不到了</p>
+</body>
+</html>
+

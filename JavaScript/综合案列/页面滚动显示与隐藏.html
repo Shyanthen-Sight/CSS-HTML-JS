@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>返回顶部</title>
+  <style>
+    /* 撑开页面产生滚动条 */
+    body {
+      height: 3000px;
+      margin: 0;
+    }
+    /* 返回顶部按钮样式 */
+    .backTop {
+      width: 50px;
+      height: 50px;
+      background: #007fff;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 14px;
+      /* 固定右下角 */
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      /* 默认隐藏 */
+      display: none;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <button class="backTop">回到顶部</button>
+
+  <script>
+    const btn = document.querySelector('.backTop')
+    // 滚动监听
+    window.addEventListener('scroll', () => {
+      // 滚动超过300px显示按钮，否则隐藏
+      if (document.documentElement.scrollTop > 300) {
+        btn.style.display = 'block'
+      } else {
+        btn.style.display = 'none'
+      }
+    })
+    // 点击返回顶部
+    btn.addEventListener('click', () => {
+      // document.documentElement.scrollTop=0
+      window.scrollTo(0,0)
+    })
+  </script>
+</body>
+</html>

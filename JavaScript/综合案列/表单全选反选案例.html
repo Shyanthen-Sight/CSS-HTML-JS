@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品勾选表格</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1200px;
+      font-size: 32px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    /* 表头样式 */
+    thead tr {
+      background-color: #3498db;
+      color: #fff;
+    }
+
+    /* 复选框单元格缩小一点 */
+    th:first-child,
+    td:first-child {
+      width: 100px;
+    }
+
+    input[type="checkbox"] {
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th><input type="checkbox" id="checkAll"> 全选</th>
+        <th>商品</th>
+        <th>商家</th>
+        <th>价格</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" class="goods-checkbox"></td>
+        <td>小米手机</td>
+        <td>小米</td>
+        <td>¥1999</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="goods-checkbox"></td>
+        <td>小米净水器</td>
+        <td>小米</td>
+        <td>¥4999</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="goods-checkbox"></td>
+        <td>小米电视</td>
+        <td>小米</td>
+        <td>¥5999</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const checkAll = document.querySelector('#checkAll')
+    const cks = document.querySelectorAll('.goods-checkbox')
+    //全选
+    checkAll.addEventListener('click', function () {
+      for (let i = 0; i < cks.length; i++) {
+        cks[i].checked = this.checked
+      }
+    })
+
+    for (let i = 0; i < cks.length; i++) {
+      cks[i].addEventListener('click', function () {
+        if (document.querySelectorAll('.goods-checkbox:checked').length === 3) {
+          checkAll.checked = true
+        }
+      })
+    }
+  </script>
+</body>
+
+</html>

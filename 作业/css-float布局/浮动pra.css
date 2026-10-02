@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 960px;
+  text-align: center;
+}
+
+.leftfix {
+  float: left;
+}
+
+.rightfix {
+  float: right;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.logo,
+.banner1,
+.banner2 {
+  height: 80px;
+  background-color: #ccc;
+  line-height: 80px;
+}
+
+.logo {
+  width: 200px;
+}
+
+.banner1 {
+  width: 540px;
+  margin: 0 10px;
+}
+
+.banner2 {
+  width: 200px;
+
+}
+
+.menu {
+  height: 30px;
+  background-color: #ccc;
+  margin-top: 10px;
+}
+
+.c1,
+.c2 {
+  width: 368px;
+  height: 198px;
+  border: 1px solid #333;
+  margin-right: 10px;
+  line-height: 198px;
+}
+
+.c3,
+.c4,
+.c5,
+.c6 {
+  margin-top: 10px;
+  border: 1px solid #333;
+  width: 178px;
+  height: 198px;
+  margin-right: 10px;
+  line-height: 198px;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.c7,
+.c8,
+.c9 {
+  height: 128px;
+  width: 198px;
+  border: 1px solid #333;
+  line-height: 128px;
+}
+
+.c8,
+.c9 {
+  margin-top: 10px;
+}
+
+.footer{
+  background-color: #ccc;
+  margin-top: 10px;
+  height: 60px;
+  line-height: 60px;
+}

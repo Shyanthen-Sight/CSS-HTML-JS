@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getElementsByTagName()</title>
+<script>
+function searchDOM(){
+  //放在函数内，页面加载完成后才用<body>的onload加载
+  let oLi = document.getElementsByTagName("li");
+  //输出长度、标签名称以及某项的文本节点值
+  console.log(
+    `${oLi.length} ${oLi[0].tagName} ${oLi[3].childNodes[0].nodeValue}`
+  );
+}
+</script>
+</head>
+<body onload="searchDOM()">
+<ul>客户端语言
+    <li>HTML</li>
+    <li>JavaScript</li>
+    <li>CSS</li>
+  </ul>
+    <ul>服务器端语言
+    <li>JAVA</li>
+    <li>PHP</li>
+    <li>C#</li>
+    </ul>
+</body>
+</html>

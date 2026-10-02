@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>setAttribute()</title>
+<script>
+function changePic(){
+	//获取图片
+	let myImg = document.getElementsByTagName("img")[0];
+	//设置图片src和title属性
+    myImg.setAttribute("src","02.jpg");
+	myImg.setAttribute("title","一幅图片");
+}
+</script>
+</head>
+<body>
+    <img src="01.jpg" title="另一幅图片" onclick="changePic()" />
+</body>
+</html>

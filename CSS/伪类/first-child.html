@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p:first-child{/*父级中的第一个p子元素*/
+            color:blue;
+        }
+        
+        p i:first-child {
+            color:red;
+        }
+        
+        h1>i:first-child {/*匹配所有<p> 元素中的第一个 <i> 元素*/
+            color:purple;
+        }
+        p i b:first-child {
+            color:yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <p>nihao</p>
+    </div>
+    <h1>dark<i>is okbokokokushi ba</i>ok</h1>
+    <p>This is some text.</p>
+    <p>This is <i>some</i> text.</p>
+    <p>This is <i>s<b>o</b>me</i> text.</p>
+</body>
+</html>

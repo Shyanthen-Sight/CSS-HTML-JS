@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM的兄弟关系</title>
+<script>
+function myDOMInspector(){
+	let myItem = document.getElementById("cssLi");
+	//访问兄弟节点
+	let nextListItem = myItem.nextSibling;
+    let nextNextListItem = nextListItem.nextSibling;
+	let preListItem = myItem.previousSibling;
+    let prePreListItem = preListItem.previousSibling;
+	console.log(prePreListItem.tagName +" "+ preListItem.tagName
+      + "  " + nextListItem.tagName +" "+ nextNextListItem.tagName);
+}
+</script>
+</head>
+<body onload="myDOMInspector()">
+    <ul>
+        <li>Java</li>
+        <li id="cssLi">Node.js</li>
+        <li>C#</li>
+	</ul>
+</body>
+</html>

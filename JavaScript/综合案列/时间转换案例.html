@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let a=+prompt('请输入总秒数')
+    let h=parseInt(a/60/60%24)
+    let m=parseInt(a/60%60)
+    let s=parseInt(a%60)
+    h<10?0+h:h6
+    m<10?0+m:m
+    s<10?0+s:s
+ //parseInt(...)
+//截断小数，只保留整数小时（正数等价于向下取整
+    
+    alert (`转化后是${h}小时${m}分钟${s}秒`)
+  </script>
+</body>
+</html>

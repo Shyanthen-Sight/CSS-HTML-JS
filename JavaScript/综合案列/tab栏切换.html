@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .tab {
+    width: 500px;
+    height: 200px;
+    border: 1px solid #333;
+  }
+
+  .nav {
+    height: 20%;
+    border-bottom: 1px solid #333;
+  }
+
+  .content {
+    height: 80%;
+  }
+
+  .tab .nav ul {
+    list-style: none;
+    display: flex;
+  }
+
+  .tab .nav ul li {
+    flex: 1;
+  }
+
+  .tab .nav ul li a {
+    text-decoration: none;
+
+  }
+
+  .active {
+    color: red;
+  }
+
+  .content .item {
+    display: none;
+  }
+
+  .content .active {
+    display: block;
+  }
+</style>
+
+<body>
+  <div class="tab">
+    <div class="nav">
+      <ul>
+        <li><a href="#" class="active">数学</a></li>
+        <li><a href="#">语文</a></li>
+        <li><a href="#">英语</a></li>
+        <li><a href="#">历史</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="item active">这是数学内容</div>
+      <div class="item">这是语文内容</div>
+      <div class="item">这是英语内容</div>
+      <div class="item">这是历史内容</div>
+    </div>
+  </div>
+
+  <script>
+
+    const as = document.querySelectorAll('.nav a')
+    const items = document.querySelectorAll('.content .item')
+ 
+    for (let i = 0; i < as.length; i++) {
+      as[i].addEventListener('click', function () {
+        // 1. 清除导航激活
+        document.querySelector('.nav .active').classList.remove('active')
+        this.classList.add('active')
+
+        // 2. 清除内容激活【必须写在里面！悬浮触发时才执行】
+        document.querySelector('.content .active').classList.remove('active')
+        items[i].classList.add('active')
+      })
+    }
+    
+  </script>
+</body>
+
+</html>

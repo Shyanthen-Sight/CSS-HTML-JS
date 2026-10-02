@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+  </div>
+  <script>
+    // // 创建一个日期对象，表示当前时间
+    // const currentDate = new Date();
+
+    // // 获取当前年份、月份和日期
+    // const year = currentDate.getFullYear();
+    // const month = currentDate.getMonth() + 1; // 月份从0开始，所以需要加1
+    // const day = currentDate.getDate();
+    // const hours = currentDate.getHours();
+    // const minutes = currentDate.getMinutes();
+    // const seconds = currentDate.getSeconds();
+
+    // 输出当前日期
+    
+    // console.log(`当前日期: ${year}-${month}-${day} ${hours}:${minutes}:${seconds}`);
+
+
+    const div = document.querySelector('div');
+    function getMyDate(){
+      const myDate = new Date();
+      let h=myDate.getHours();
+      let m=myDate.getMinutes();
+      let s=myDate.getSeconds();
+      h = h < 10 ? '0' + h : h;
+      m = m < 10 ? '0' + m : m;
+      s = s < 10 ? '0' + s : s;
+      return `今天是:${myDate.getFullYear()}年${myDate.getMonth() + 1}月${myDate.getDate()}日 ${myDate.getHours()}时${myDate.getMinutes()}分${myDate.getSeconds()}秒`;
+    }
+    div.innerHTML = getMyDate();
+    setInterval(() => {
+      div.innerHTML = getMyDate();
+    }, 1000);
+  </script>
+
+
+</body>
+
+</html>

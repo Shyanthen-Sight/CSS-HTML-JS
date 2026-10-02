@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  JS 引擎自带、不需要自己创建、开箱即用的全局对象，
+  浏览器 / Node 环境都原生提供，
+  直接就能调用它的属性和方法，这就是内置对象。
+  <script>
+    let str = 'abc';
+    console.log(str.length); // 底层临时 new String('abc') 调用length
+    Math.floor(1.9) // 向下取整
+    Math.random() // 随机数
+    JSON.stringify(students) // 对象转字符串
+    JSON.parse('{"name":"小明"}') // 字符串转回对象
+  </script>
+</body>
+
+</html>

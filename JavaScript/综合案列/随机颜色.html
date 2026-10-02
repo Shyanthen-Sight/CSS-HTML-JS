@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>随机颜色</title>
+</head>
+<body>
+  <script>
+    //自定义一个随机颜色函数 flag=true返回十六进制 #xxxxxx  false返回rgb()
+    function getRandomColor(flag) {
+      if (flag) {
+        let str = '#'
+        let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+        for (let i = 1; i <= 6; i++) {
+          let random = Math.floor(Math.random() * arr.length)
+          str = str + arr[random]
+        }
+        return str // 返回十六进制颜色
+      } else {
+        let r = Math.floor(Math.random() * 256)
+        let g = Math.floor(Math.random() * 256)
+        let b = Math.floor(Math.random() * 256)
+        return `rgb(${r},${g},${b})` // 返回rgb格式颜色
+      }
+    }
+    //调用函数，换行用字符串'<br>'
+    document.write(getRandomColor(true) + '<br>')
+    document.write(getRandomColor(false))
+  </script>
+</body>
+</html>

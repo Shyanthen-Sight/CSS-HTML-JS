@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>获取父节点</title>
+<script>
+function myDOMInspector(){
+  let myItem = document.getElementById("cssLi");
+  console.log(myItem.parentNode.tagName);		//访问父节点
+}
+</script>
+</head>
+<body onload="myDOMInspector()">
+  <ul>
+    <li>Java</li>
+    <li id="cssLi">Node.js</li>
+    <li>C#</li>
+  </ul>
+</body>
+</html>

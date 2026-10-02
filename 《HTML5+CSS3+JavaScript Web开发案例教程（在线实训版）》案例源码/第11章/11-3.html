@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>if语句</title>
+</head>
+<body>
+<script>
+	//首先获取用户的一个输入，并用Number()强制转换为数字
+	let iNumber = Number(prompt("输入一个5到100之间的数字", ""));
+	if(isNaN(iNumber))		//判断输入的是否是数字
+		alert("请确认你的输入正确");
+	else if(iNumber > 100 || iNumber < 5)		//判断输入的数字范围
+		alert("你输入的数字范围不在5和100之间");
+	else
+		alert("你输入的数字是:" + iNumber);
+</script>
+</body>
+</html>

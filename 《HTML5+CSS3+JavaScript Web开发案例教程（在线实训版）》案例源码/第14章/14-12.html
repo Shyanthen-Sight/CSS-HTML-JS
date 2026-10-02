@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>插入新的节点</title>
+<script>
+function insertP(){
+	let oOldP = document.getElementsByTagName("p")[0];
+	let oNewP = document.createElement("p");		//新建节点
+	let oText = document.createTextNode("这是一个真实的故事");
+	oNewP.appendChild(oText);
+	oOldP.parentNode.insertBefore(oNewP,oOldP);		//插入节点
+}
+</script>
+</head>
+<body>
+<p onclick="insertP()">点击一下，就会有文字插入到这行文字之前</p>
+</body>
+</html>

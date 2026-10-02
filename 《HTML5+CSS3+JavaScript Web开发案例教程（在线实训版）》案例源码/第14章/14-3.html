@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>获取DOM的节点类型</title>
+<script>
+function myDOMInspector(){
+	let oUl = document.getElementById("myList");	//获取<ul>标记
+	let DOMString = "";
+	if(oUl.hasChildNodes()){							//判断是否有子节点
+		for(let item of oUl.childNodes)				//逐一查找
+			DOMString += item.nodeName + "\n";
+	}
+	console.log(DOMString);
+}
+</script>
+</head>
+<body onload="myDOMInspector()">
+	<ul id="myList">
+        <li>Java</li>
+        <li>Node.js</li>
+        <li>C#</li>
+	</ul>
+</body>
+</html>

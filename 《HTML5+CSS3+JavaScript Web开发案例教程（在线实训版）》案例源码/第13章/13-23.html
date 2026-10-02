@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>数组的截取与连接</title>
+<script>
+
+// 获取仅包含最后一个元素的子数组
+let array = [1,2,3,4,5];
+array.slice(-1); // [5]
+console.log(array)
+
+// 获取不包含最后一个元素的子数组
+let array2 = [1,2,3,4,5];
+array2.slice(0, -1); // [1,2,3,4]
+console.log(array2)
+
+const array3 = [1,2].concat(['a', 'b'], ['name']);
+// [1, 2, "a", "b", "name"]
+console.log(array3)
+</script>
+
+</head>
+<body>
+</body>
+</html>

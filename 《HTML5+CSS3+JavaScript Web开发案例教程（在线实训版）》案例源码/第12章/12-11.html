@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>获取当前的年月日</title>
+<script>
+let oMyDate = new Date();
+let iYear = oMyDate.getFullYear();
+let iMonth = oMyDate.getMonth() + 1;    //月份是从0开始的
+let iDate = oMyDate.getDate();
+let iDay = oMyDate.getDay();
+switch(iDay){
+    case 0:
+        iDay = "星期日";
+        break;
+    case 1:
+        iDay = "星期一";
+        break;
+    case 2:
+        iDay = "星期二";
+        break;
+    case 3:
+        iDay = "星期三";
+        break;
+    case 4:
+        iDay = "星期四";
+        break;
+    case 5:
+        iDay = "星期五";
+        break;
+    case 6:
+        iDay = "星期六";
+        break;
+    default:
+        iDay = "error";
+}
+console.log("今天是" + iYear + "年" + iMonth +"月" + iDate + "日," + iDay);
+</script>
+
+</head>
+<body>
+</body>
+</html>

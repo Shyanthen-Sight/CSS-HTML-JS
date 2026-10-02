@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    width: 200px;
+    height: 300px;
+  }
+</style>
+
+<body>
+  <div class="box">123</div>
+  <div class="box">abc</div>
+  <p id="nav">导航栏</p>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    //获取第一个div元素,这逻辑只能选一个
+    // const box=document.querySelector('.box')
+    // const box=document.querySelector('div')
+    // console.log(box)
+    //------------------------------
+    // const nav=document.querySelector('#nav')
+    // console.log(nav)
+    //------------------------------
+    // const li=document.querySelector('ul li:first-child')
+    // console.log(li)
+    //-------------------------------------
+    //选择所有的小li并且打印输出
+    const li = document.querySelectorAll('ul li')
+    console.log(li);
+    for (let i = 0; i <= li.length; i++) {
+      console.log(li[i]);
+    }
+    //打印输出为一个伪数组，即没有数组的增删改差功能
+    //---------------------------------------
+
+  </script>
+</body>
+
+</html>

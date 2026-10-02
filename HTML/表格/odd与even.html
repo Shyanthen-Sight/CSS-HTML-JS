@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        caption {
+            background-color: #333;
+            color: white;
+            font-weight: bolder;
+        }
+
+        table {
+            border: 2px solid;
+            border-color: #333;
+            width: 400px;
+            text-align: center;
+        }
+        th,td{
+            border: 2px solid;
+        }
+        thead th{
+            background-color: antiquewhite;
+        }
+        tbody tr:nth-child(even){
+            background-color: red;
+        }
+         tbody tr:nth-child(odd){
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>Project</caption>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>price</th>
+                <th>brand</th>
+                <th>sales</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>智能手机</td>
+                <td>3999</td>
+                <td>华为</td>
+                <td>12500</td>
+            </tr>
+            <tr>
+                <td>笔记本电脑</td>
+                <td>5499</td>
+                <td>联想</td>
+                <td>8600</td>
+            </tr>
+            <tr>
+                <td>蓝牙耳机</td>
+                <td>299</td>
+                <td>小米</td>
+                <td>23000</td>
+            </tr>
+            <tr>
+                <td>平板电脑</td>
+                <td>2199</td>
+                <td>苹果</td>
+                <td>9800</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

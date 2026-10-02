@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let name=['赵五','李明','王刚','王五','赵科','小明']
+    // let random=Math.floor(Math.random()*name.length)
+    // document.write(name[random])
+    //------------------------------------------------------
+    //在上面的基础上增加点名不重复显示一个名字的功能
+    let name = ['赵五', '李明', '王刚', '王五', '赵科', '小明']
+    let random = Math.floor(Math.random() * name.length)
+    document.write(name[random])
+    name.splice(random,1)
+
+  </script>
+</body>
+
+</html>

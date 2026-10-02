@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>计算程序的执行速度</title>
+<script>
+let myDate1 = new Date();    //运行代码前的时间
+let sum=0;
+for(let i=0;i<3000000;i++) { sum += i; }
+let myDate2 = new Date();    //运行代码后的时间
+console.log(myDate2-myDate1);
+</script>
+
+</head>
+<body>
+</body>
+</html>

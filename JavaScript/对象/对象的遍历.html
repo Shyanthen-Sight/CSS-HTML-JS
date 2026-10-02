@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let product = {
+      name: 'water lib',
+      price: '10$',
+      num:'1000',
+      usage:'drink'
+    }
+    for(let k in product)
+    {
+      console.log(k);//k是字符串
+      // console.log(product.k);相当于console.log(product.'name'),假设k是1
+      console.log(product[k]);
+      
+    }
+  </script>
+</body>
+
+</html>

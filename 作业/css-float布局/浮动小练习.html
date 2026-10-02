@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer {
+      width: 500px;
+      border: 1px solid #333;
+      background-color: grey;
+    }
+
+    div div {
+      width: 100px;
+      height: 80px;
+      border: 1px solid #333;
+      background-color: lightblue;
+      margin: 10px;
+      float: left;
+    }
+  
+    .outer::after{
+      content: '';
+      display: block;
+      clear: both;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div id="box1">1</div>
+    <div id="box2">2</div>
+    <div id="box3">3</div>
+    <div id="box4">4</div>
+  </div>
+</body>
+
+</html>

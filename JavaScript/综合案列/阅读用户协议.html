@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <textarea value="">
+      用户协议Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, deserunt nesciunt iste, dolorum blanditiis numquam eveniet hic voluptatibus velit unde dolore harum beatae a illo perspiciatis officiis nisi facere rerum.
+  </textarea><br>
+  <button class="btn" disabled>我已经阅读用户协议（5）</button>
+  <script>
+    const btn=document.querySelector('.btn')
+    let i=5
+    let n=setInterval(function(){
+      i--
+      btn.innerHTML=`我已经阅读用户协议（${i}）`
+      if(i===0){
+        clearInterval(n)
+        btn.disabled=false
+        btn.innerHTML=`我已经阅读用户协议`
+      }
+    },1000)
+  </script>
+</body>
+
+</html>

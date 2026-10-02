@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>生成随机数字</title>
+<script>
+  function selectFrom(iFirstValue, iLastValue){
+      let iChoices = iLastValue - iFirstValue + 1;    //计算项数
+      return Math.floor(Math.random()*iChoices+iFirstValue);
+  }
+  let iNum = selectFrom(2,99);        //随机选择数字
+  let aFruits = ["apple","pear","peach","orange","watermelon","banana"];
+  //随机选择数组元素
+  let sFruit = aFruits[selectFrom(0,aFruits.length-1)];
+  console.log(iNum + " " + sFruit);
+</script>
+
+</head>
+<body>
+</body>
+</html>

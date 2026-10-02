@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>创建并添加新节点</title>
+<script>
+function createP(){
+	let oP = document.createElement("p");
+	let oText = document.createTextNode("这是一段感人的故事");
+	oP.appendChild(oText);
+	document.body.appendChild(oP);
+}
+</script>
+</head>
+<body onload="createP()">
+<p>事先写一行文字在这里，测试appendChild()方法的添加位置</p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 等待所有页面资源加载完毕后执行js
+    window.addEventListener('load', function () {
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function () {
+        alert('hello')
+      })
+
+      img.addEventListener('load',function(){
+        // 等待图片加载完毕后，再来执行函数内的代码
+      })
+
+      //初始的html加载完毕后直接读取，无需等待css，js，img等其他读取
+      document.addEventListener('DOMContentLoaded', function () {
+        const btn = documnet.querySelector('button')
+        btn.addEventListener('click', function () {
+          alert('11')
+        })
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <button>click</button>
+</body>
+
+</html>

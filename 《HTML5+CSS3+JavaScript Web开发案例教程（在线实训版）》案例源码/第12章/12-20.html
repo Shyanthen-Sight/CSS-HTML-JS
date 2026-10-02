@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>检测浏览器和操作系统</title>
+<script>
+let ua = navigator.userAgent;
+console.log(ua);
+//检测浏览器
+let isChrome = ua.indexOf("Chrome") > -1;
+let isIE = ua.indexOf("MSIE") > -1 || ua.indexOf("rv:") > -1;
+let isFirefox = ua.indexOf("Firefox") > -1;
+let isSafari = ua.indexOf("Safari") > -1 && !isChrome;
+let isOpera = ua.indexOf("OP") > -1 && !isChrome;
+
+//检测操作系统
+let isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows");
+let isMac = (navigator.platform == "Mac");
+let isUnix = (navigator.platform == "X11") && !isWin && !isMac;
+
+if(isChrome) document.write("Chrome ");
+if(isSafari) document.write("Safari ");
+if(isIE) document.write("IE ");
+if(isFirefox) document.write("Mozilla ");
+if(isOpera) document.write("Opera ");
+
+if(isWin) document.write("Windows");
+if(isMac) document.write("Mac");
+if(isUnix) document.write("Unix");
+</script>
+
+</head>
+<body>
+</body>
+</html>

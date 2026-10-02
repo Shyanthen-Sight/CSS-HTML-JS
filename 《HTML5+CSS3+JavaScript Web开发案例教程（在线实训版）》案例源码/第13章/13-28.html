@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Map的各种操作</title>
+<script>
+
+let map = new Map();
+map.set("key1", "value1")
+
+let value = map.get("key1");
+
+for(let [key, value] of map) {
+   console.log(key + " : " + value);
+}
+
+for(let key of map.keys()) {
+   console.log(key);
+}
+
+for(let key of map.values()) {
+   console.log(value);
+}
+
+map.forEach(function(value, key) {
+  console.log(key + " = " + value);
+})
+
+map.forEach((value, key)=> console.log(key + " = " + value))
+
+
+let kletray = [["key1", "value1"], ["key2", "value2"]];
+// Map 构造函数可以将一个 二维 键值对数组转换成一个 Map 对象
+let myMap = new Map(kletray);
+// 使用 Array.from 函数可以将一个 Map 对象转换成一个二维键值对数组
+let outArray = Array.from(myMap);
+
+
+let myMap1 = new Map([["key1", "value1"], ["key2", "value2"]]);
+let myMap2 = new Map(myMap1);
+console.log(myMap1 === myMap2);
+// 打印 false。 Map 对象构造函数生成实例，迭代出新的对象。
+
+
+
+let first = new Map([[1, 'one'], [2, 'two'], [3, 'three'],]);
+let second = new Map([[1, 'uno'], [2, 'dos']]);
+// 合并两个 Map 对象时，如果有重复的键值，则后面的会覆盖前
+// 面的，对应值即 uno，dos， three
+let merged = new Map([...first, ...second]);
+console.log(merged)
+</script>
+
+</head>
+<body>
+</body>
+</html>

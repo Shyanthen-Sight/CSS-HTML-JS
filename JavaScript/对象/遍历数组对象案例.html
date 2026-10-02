@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>学生列表</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 30px;
+      font-size: 22px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    /* 表头灰色 */
+    th {
+      background-color: #e9e9e9;
+    }
+
+    /* 只给tbody里的行加hover，thead第一行不受影响 */
+    tbody tr:hover {
+      background-color: #e2e8f0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>学生列表</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>家乡</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script>
+        let students = [
+          { name: '小明', age: 18, gender: '男', hometown: '河北省' },
+          { name: '小红', age: 19, gender: '女', hometown: '河南省' },
+          { name: '小刚', age: 17, gender: '男', hometown: '山西省' },
+          { name: '小丽', age: 18, gender: '女', hometown: '山东省' }
+        ];
+        for (let i = 0; i < students.length; i++) {
+          document.write(`
+            <tr>
+                <td>${i+1}</td>
+                <td>${students[i].name}</td>
+                <td>${students[i].age}</td>
+                <td>${students[i].gender}</td>
+                <td>${students[i].hometown}</td>
+            </tr>
+          `)
+        }
+
+      </script>
+    </tbody>
+  </table>
+</body>
+
+</html>

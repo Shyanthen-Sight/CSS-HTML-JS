@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function reminder(){
+            var x = document.getElementById("demo").value;
+            if(isNaN(x)||x=="")/* is Not a Number*/
+            {
+                alert("not number");
+            }
+            else{
+                alert("is number");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <strong>plz input number,if not web will reminder</strong><br>
+    <input id="demo" type="text">
+    <button onclick="reminder()">click to verify</button>
+</body>
+
+</html>

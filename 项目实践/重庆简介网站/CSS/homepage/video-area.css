@@ -1,0 +1,65 @@
+/* 父容器：必须加relative，作为子元素定位参照物 */
+.video_area {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* 给容器高度，不然高度为0，视频看不见 */
+  overflow: hidden;
+}
+
+/* 背景视频：绝对定位铺满父容器，层级最低 */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  /* 底层 */
+}
+
+/* 文字：同样absolute，才能和视频在同一堆叠上下文 */
+.video_text {
+  position: absolute;
+  top: 20%;
+  z-index: 10;
+  color: #fff;
+  font-size: 10px;
+}
+
+
+
+@font-face {
+  font-family: 'PingFangFangMaoTiCaoShu';
+  /* src: url(../../字体/PingFangFangMaoTiCaoShu-2.ttf); */
+  src: url(../../字体/PingFangFangMaoTiCaoShu-2.ttf);
+}
+
+@font-face {
+  font-family: 'CrimsonText-Bold';
+  /* src: url(../../字体/XianSheng-GaiZenMeChengNi/XianSheng-GaiZenMeChengNi-2.ttf); */
+  src: url(../../字体/XianSheng-GaiZenMeChengNi/XianSheng-GaiZenMeChengNi-2.ttf);
+}
+
+
+
+.font {
+  font-family: 'PingFangFangMaoTiCaoShu';
+  font-size: 150px;
+  padding: 0 5px;
+  margin-left: 60px;
+  color: #ff0000;
+}
+
+.video_text div:nth-child(2) {
+  color: #ffffff;
+  font-size: 200px;
+}
+
+.video_text div:nth-child(3) {
+  font-size: 20px;
+  font-family: 'CrimsonText-Bold';
+  color: rgb(87, 92, 93);
+
+}

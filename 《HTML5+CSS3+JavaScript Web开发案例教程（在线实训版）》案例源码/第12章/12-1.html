@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<title>ES6的Class和对象</title>
+<script>
+class Car {
+    constructor(brand, color) {
+        this.brand = brand;
+        this.color = color;
+    }
+    move() {
+        console.log('the car is moving.');
+    }
+}
+let car1 = new Car('BMW', 'white');
+console.log(car1.brand);
+console.log(car1.color);
+car1.move();
+let car2 = new Car('TESLA', 'black');
+console.log(car2.brand);
+console.log(car2.color);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>事件对象</title>
+</head>
+<body>
+<div id="target">
+  <p>click p</p>
+  click div
+</div>
+<script>
+document
+  .querySelector("div#target")
+  .addEventListener('click', 
+    (event) => {
+      console.log(event.target.tagName)
+    }
+  );
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>事件冒泡</title>
+</head>
+<body>
+  <div>
+    <p>这是一个段落<p>
+  </div>
+
+<script>
+document
+  .querySelectorAll("*")
+  .forEach(element => element.addEventListener('click', 
+    (event) => {
+      console.log(event.target.tagName 
+      + " - " + event.currentTarget.tagName
+      + " - " + event.eventPhase);
+    },
+    false  //在冒泡阶段触发事件
+));  
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片数字求和校验</title>
+    <style>
+        /* 图片容器样式 */
+        .img-box {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            width: fit-content;
+        }
+        .img-box img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 1px solid #999;
+        }
+        .control-area {
+            margin-top: 10px;
+        }
+        input {
+            padding: 6px 10px;
+            width: 100px;
+            font-size: 16px;
+        }
+        button {
+            padding: 7px 16px;
+            margin: 0 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 图片容器 -->
+    <div class="img-box" id="imgContainer"></div>
+
+    <!-- 输入框与按钮区域 -->
+    <div class="control-area">
+        <input type="number" id="sumInput" placeholder="输入数字总和">
+        <button id="refreshBtn">刷新图片</button>
+        <button id="submitBtn">提交校验</button>
+    </div>
+
+    <script>
+        // 1. 全部图片对应的数字数组（共5张）
+        const allNumList = [1, 2, 3, 4, 5];
+        // 保存当前展示的3个数字，用于求和校验
+        let currentShowNums = [];
+        // 图片地址：这里用占位图，分别对应数字1-5，可替换成你的真实图片路径
+        const imgSrcList = [
+            "https://picsum.photos/id/1/120/120",
+            "https://picsum.photos/id/2/120/120",
+            "https://picsum.photos/id/3/120/120",
+            "https://picsum.photos/id/4/120/120",
+            "https://picsum.photos/id/5/120/120"
+        ];
+
+        const imgContainer = document.getElementById("imgContainer");
+        const refreshBtn = document.getElementById("refreshBtn");
+        const submitBtn = document.getElementById("submitBtn");
+        const sumInput = document.getElementById("sumInput");
+
+        // 随机抽取3个不重复数字并渲染图片
+        function renderThreeImgs() {
+            // 复制原数组，洗牌打乱
+            let tempArr = [...allNumList];
+            // 洗牌算法
+            for (let i = tempArr.length - 1; i > 0; i--) {
+                const randomIdx = Math.floor(Math.random() * (i + 1));
+                [tempArr[i], tempArr[randomIdx]] = [tempArr[randomIdx], tempArr[i]];
+            }
+            // 截取前3个作为本次展示
+            currentShowNums = tempArr.slice(0, 3);
+
+            // 清空容器，重新渲染图片
+            imgContainer.innerHTML = "";
+            currentShowNums.forEach(num => {
+                const img = document.createElement("img");
+                // 数字1对应下标0，数字2对应下标1...以此类推
+                img.src = imgSrcList[num - 1];
+                img.alt = `数字${num}`;
+                img.title = `该图片数字：${num}`; // 鼠标悬浮看数字
+                imgContainer.appendChild(img);
+            });
+            // 清空输入框
+            sumInput.value = "";
+        }
+
+        // 计算三张图片真实总和
+        function getRealSum() {
+            return currentShowNums.reduce((a, b) => a + b, 0);
+        }
+
+        // 刷新按钮点击事件
+        refreshBtn.addEventListener("click", renderThreeImgs);
+
+        // 提交校验按钮点击事件
+        submitBtn.addEventListener("click", () => {
+            const userInputVal = Number(sumInput.value);
+            const realTotal = getRealSum();
+
+            // 判断输入是否为空/非数字
+            if (isNaN(userInputVal) || sumInput.value === "") {
+                alert("请输入有效的数字！");
+                return;
+            }
+
+            if (userInputVal === realTotal) {
+                alert(`回答正确！三张图片数字总和为：${realTotal}`);
+            } else {
+                alert(`回答错误，真实总和是：${realTotal}，你输入的是：${userInputVal}`);
+            }
+        });
+
+        // 页面加载完成先渲染一次图片
+        renderThreeImgs();
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>空引用</title>
+</head>
+<body>
+<script>
+
+let mike = {
+    id: 'A23',
+    name: 'Mike'
+}
+
+let car = {
+    color: 'white',
+    maker: null,
+    status: 'planning'
+}
+console.log(car.maker)
+
+car = {
+    color: 'white',
+    maker: mike,
+    status: 'producing'
+}
+console.log(car.maker)
+
+</script>
+</body>
+</html>

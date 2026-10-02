@@ -1,0 +1,113 @@
+.landscape_top {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.landscape_top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.landscape_top p {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-family: 'Crossover';
+  opacity: 0;
+  animation: fadeIn 1.7s ease forwards;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.redtext {
+  color: rgb(214, 56, 56);
+}
+
+.landscape_btn {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  background-color: #000000;
+  border-bottom: 0.1px solid rgb(37, 37, 37);
+}
+
+.btn_style {
+  flex: 1;
+  padding: 8px 16px;
+  margin: 6px 5px;
+  border: 0.1px solid rgb(141, 4, 4);
+  background: #000000;
+  color: rgb(141, 141, 141);
+  border-radius: 6px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+}
+
+.btn_style:hover {
+
+  color: #000000;
+  transform: scale(1.1);
+  background-color: #fffbfb;
+  border-color: #ffffff;
+}
+
+.landscape_btn span {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.landscape_bottom {
+  width: 100%;
+  height: 20vw;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.landscape_bottom a {
+  text-decoration: none;
+  color: #363636;
+  font-size: 10px;
+}
+
+.landscape_bottom span {
+  padding-top: 15px;
+  display: block;
+  width: 100%;
+  font-size: 10px;
+  text-align: center;
+}
+
+.county {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.county a{
+  color: #757575;
+  transition: color 0.9s ease;
+}
+
+.county a:hover {
+  color: #ffffff;
+}

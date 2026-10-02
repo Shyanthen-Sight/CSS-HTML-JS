@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Set的各种操作</title>
+<script>
+
+let set = new Set();
+
+set.add(1);
+set.add(5);
+set.add(5);
+set.add("text");
+let o = {a: 1, b: 2};
+set.add(o);
+set.add({a: 1, b: 2});
+console.log(set.size); //5
+
+
+// 数组转为Set
+let mySet = new Set(["value1", "value2", "value3"]);
+// 用展开操作符，将 Set 转为数组
+let myArray = [...mySet];
+console.log(myArray);
+
+//数组去重
+// let a = [1, 2, 3, 3, 4, 4];
+// let set = new Set(a);
+// a = [...set]; // [1, 2, 3, 4]
+// console.log(a);
+
+let a = new Set([1, 2, 3]);
+let b = new Set([4, 3, 2]);
+let union = new Set([...a, ...b]); // {1, 2, 3, 4}
+let intersect = new Set([...a].filter(x => b.has(x))); // {2, 3}
+let difference = new Set([...a].filter(x => !b.has(x))); // {1}
+console.log(union)
+console.log(intersect)
+console.log(difference)
+</script>
+
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getElementsById()</title>
+<script>
+function searchDOM(){
+	let oLi = document.getElementById("cssLi");
+	//输出标签名称以及文本节点值
+	console.log(oLi.tagName + " " + oLi.childNodes[0].nodeValue);
+}
+
+</script>
+</head>
+<body onload="searchDOM()">
+<ul>客户端语言
+    <li>HTML</li>
+    <li>JavaScript</li>
+    <li id="cssLi">CSS</li>
+  </ul>
+    <ul>服务器端语言
+    <li>JAVA</li>
+    <li>PHP</li>
+    <li>C#</li>
+    </ul>
+</body>
+</html>

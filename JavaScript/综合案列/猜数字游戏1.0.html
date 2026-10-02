@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //随机生成一个数字1-10
+    //随机去n-m的一个数字
+    function getrandom(n,m){
+      return Math.floor(Math.random()*(m-n+1))+n
+    }
+    let random=getrandom(1,10)
+    while(1)
+    { 
+      let num=+prompt('请输入你要猜的数字(1-10)')
+      if(num>random){
+        alert('你猜大了')
+      }
+      if(num<random){
+        alert('你猜小了')
+      }
+      if(num=random){
+        alert(`你猜正确了！！答案是${random} `)
+      }
+      break;
+    }
+  </script>
+</body>
+</html>
+  if(num>random){
+      alert('你猜大了')
+    }else{
+      alert('你猜小了')
+    }

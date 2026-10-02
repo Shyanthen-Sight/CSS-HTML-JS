@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #change{
+    cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+    <script>
+        function changeImage() {
+            element = document.getElementById('change')// 获取网页中 id="change" 的元素，存入 element 变量
+            if (element.src.match("tree")) {
+                element.src = "/img/xh.jpg";
+            }
+            else {
+                element.src = "/img/tree.jpg";
+            }
+        }
+    </script>
+    <img id="change" onclick="changeImage()" src="/img/xh.jpg" width="200" height="180">
+    <p>clicking can change img</p>
+</body>
+
+</html>

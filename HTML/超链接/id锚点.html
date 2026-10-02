@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML锚点跳转完整示例</title>
+    <style>
+        /* 给页面加样式，让滚动效果更明显 */
+        body {
+            font-family: "微软雅黑", sans-serif;
+            line-height: 2;
+            margin: 0;
+            padding: 20px;
+        }
+        /* 导航栏固定在顶部，方便点击 */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #f5f5f5;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .nav a {
+            margin-right: 30px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            color: #3498db;
+        }
+        /* 给每个区块加高度，让滚动有效果 */
+        section {
+            height: 800px;
+            margin-top: 80px;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        /* 平滑滚动，体验更好 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航锚点链接区 -->
+    <div class="nav">
+        <a href="#section1">跳转到第1部分</a>
+        <a href="#section2">跳转到第2部分</a>
+        <a href="#section3">跳转到第3部分</a>
+        <a href="#top">回到顶部</a>
+    </div>
+
+    <!-- 锚点目标区块 -->
+    <section id="section1">
+        <h2>这是第1部分</h2>
+        <p>点击顶部导航的「跳转到第1部分」，会平滑滚动到这里~</p>
+    </section>
+
+    <section id="section2">
+        <h2>这是第2部分</h2>
+        <p>点击顶部导航的「跳转到第2部分」，会平滑滚动到这里~</p>
+    </section>
+
+    <section id="section3">
+        <h2>这是第3部分</h2>
+        <p>点击顶部导航的「跳转到第3部分」，会平滑滚动到这里~</p>
+        <a href="#top">回到顶部</a>
+    </section>
+
+    <!-- 顶部锚点，用于回到顶部 -->
+    <div id="top"></div>
+</body>
+</html>

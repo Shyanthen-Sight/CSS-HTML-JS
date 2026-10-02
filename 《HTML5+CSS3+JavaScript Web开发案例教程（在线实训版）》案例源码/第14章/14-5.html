@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>递归获取父节点</title>
+<script>
+function myDOMInspector(){
+	let myItem = document.getElementById("cssLi");
+	let parentElm = myItem.parentNode;
+	while(parentElm.className != "colorful" && parentElm != document.body)
+		parentElm = parentElm.parentNode;	//一路往上找
+	console.log(parentElm.tagName);
+}
+</script>
+</head>
+<body onload="myDOMInspector()">
+<div class="colorful">
+	<ul>
+		<li>Java</li>
+    <li id="cssLi">Node.js</li>
+    <li>C#</li>
+	</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* div {
+      width: 100px;
+      height: 100px;
+      background-color: #dba0a0;
+      margin: 0 auto;
+    } */
+  </style>
+</head>
+
+<body>
+  <!-- <div></div> -->
+  <script>
+    function getmax(a = []) {
+      let max = 0
+      let min=a[0]
+      for (let i = 0; i < a.length; i++) {
+        if (a[i] > max) {
+          max = a[i]
+        }
+        if (min>a[i]) {
+          min = a[i]
+        }
+      }
+      return [min,max]
+    }
+    document.write(getmax([1,2,3,4,5]))
+    // let max = getmax([1, 2, 3,4])
+    // const div = document.querySelector('div')
+    // div.innerHTML=max
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #box{
+    position: relative;
+    top: 50px;
+    width: 100px;
+background-color: #ea9f9f;
+    height:100px
+  }
+  #child{
+    width: 60px;
+   height: 60px;
+   background-color: #792323;
+  }
+</style>
+<body>
+  <button id="btn">click</button>
+  <button id="btn2">mouse</button>
+  <div id="box">
+    <div id="child">
+       nihao 
+    </div>
+
+  </div>
+
+  <script>
+    btn.onclick = function () {
+      console.log("单击执行")
+
+    }
+    btn.ondblclick = function () {
+      console.log("双击执行")
+    }
+
+    // btn.oncontextmenu=function(){
+    //   console.log('右键点击，自定义菜单，需要阻断游览器右键下拉栏');
+    // }
+
+    // box.onmousedown=function(){
+    //   console.log('鼠标按下')
+      
+    // }
+
+    // box.onmousemove=function(){
+    //   console.log('鼠标移动')
+    // }
+    // box.onmouseup=function(){
+    //   console.log('鼠标抬起')
+    // }
+   
+    //孩子父亲都会显示
+    // box.onmouseover=function(){
+    //   console.log('移入');
+      
+    // }
+    // box.onmouseout=function(){
+    //   console.log('移出');
+    // }
+  
+    //孩子不显示，父亲显示
+    box.onmouseenter=function(){
+      console.log('移入');
+      
+    }
+    box.onmouseleave=function(){
+      console.log('移出');
+    }
+  
+
+  </script>
+</body>
+
+</html>
